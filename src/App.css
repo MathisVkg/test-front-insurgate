@@ -1,38 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+    scroll-behavior: smooth;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+/*spinner*/
+.spinner-animation {
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: spinner;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes spinner {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*top page, form*/
+.form-container {
+    margin: 0;
+    background-color: rgba(40, 40, 40, 0.80);
+    color: #fff;
+    padding: 20px 40px;
+}
+.form-container div {
+    display: flex;
+    flex-direction: column;
+}
+.form-container form label {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.form-container .description {
+    max-width: 600px;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+.form-container .error {
+    color: #f54545;
+    font-size: 0.8em;
+    transition: 0.3s ease-in-out;
+}
+.form-container form .input-container {
+    display: flex;
+    flex-direction: unset;
+    align-items: center;
+    max-width: fit-content;
+}
+.form-container form .input-container i {
+    position: relative;
+    top: 5px;
+    left: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.form-container form .input-container i:hover {
+    color: #f54545;
+}
+.form-container form input {
+    border: unset;
+    border-radius: 4px;
+    padding: 5px 15px;
+    margin-top: 10px;
+    width: 400px;
+}
+.form-container form button {
+    margin-top: 30px;
+    font-size: 1em;
+    font-weight: 500;
+    border: unset;
+    border-radius: 4px;
+    padding: 7px 40px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-family: 'Work Sans', sans-serif;
+}
+.form-container button:hover {
+    background-color: #2464af;
+    color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*bottom page, display information*/
+.information-container .global-container {
+    display: flex;
+    padding: 10px;
+}
+.empty-container p {
+    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.information-container .left-container,
+.information-container .right-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px;
+}
+.information-container .left-container .company-adresse,
+.information-container .left-container .company-name {
+    background-color: rgba(227, 227, 227, 0.5);
+    box-shadow: 5px 5px 10px rgba(40, 40, 40, 0.25);
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 4px;
+    /*max-width: fit-content;*/
+}
+.information-container .left-container .company-adresse div {
+    display: flex;
+    flex-direction: column;
+}
+.information-container .left-container .company-adresse h4 i {
+    margin-right: 10px;
+}
+.information-container .left-container .company-adresse p {
+    margin: 0;
+}
+.information-container .left-container .company-name .name {
+    font-size: 3em;
+    font-weight: 600;
+}
+.information-container .left-container .company-name .info span {
+    color: #2464af;
+    font-weight: 600;
+}
+.information-container .right-container .company-activities {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    max-height: 555px;
+    padding-right: 35px;
+}
+.information-container .right-container .company-activity-card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(227, 227, 227, 0.5);
+    box-shadow: 5px 5px 10px rgba(40, 40, 40, 0.25);
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+}
+.information-container .right-container .company-activity-card:hover {
+    background-color: rgba(36, 100, 175, 0.5);
+}
+.information-container .right-container .company-activity-card .date {
+    opacity: 0.8;
+    margin: 0;
+    font-weight: 500;
+}
+.information-container .right-container .company-activity-card .date i {
+    margin-right: 10px;
+}
+.information-container .right-container .company-activity-card .label {
+    margin: 5px 0 0 0;
 }
 
-.App-link {
-  color: #61dafb;
+.information-container .left-container .juridical-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(227, 227, 227, 0.5);
+    box-shadow: 5px 5px 10px rgba(40, 40, 40, 0.25);
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.information-container .left-container .juridical-container h4 i {
+    margin-right: 10px;
+}
+.information-container .left-container .juridical-container p {
+    margin: 10px 0 0 0;
+}
+.information-container .left-container .juridical-container p span {
+    margin: 10px 0 0 0;
+    color: #2464af;
+    font-weight: 600;
 }
