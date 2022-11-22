@@ -20,7 +20,8 @@ function getInformationByTva(tvaNumber) {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Basic aW5zdXJnYXRlOmluc3VyZ2F0ZQ=="
+      // eslint-disable-next-line no-undef
+      Authorization: `Basic ${process.env?.REACT_APP_AUTH}`
     }
   };
 
