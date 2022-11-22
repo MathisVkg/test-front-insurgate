@@ -1,0 +1,13 @@
+# Ignore HTML files:
+*.html
+
+# Ignore CSS and SCSS files: 
+*.css
+*.scss
+
+# Ignore Icons
+*.less
+*.json
+
+# Others
+ie7.js
