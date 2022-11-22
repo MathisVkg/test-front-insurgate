@@ -28,7 +28,6 @@ function App() {
   const getInformationByTva = (tvaNumber) => {
     apiService.getInformationByTva(tvaNumber).then(
       (result) => {
-        console.log(result.company);
         setCompanyInfo(result.company);
         setIsLoading(false);
       },
@@ -143,7 +142,7 @@ function App() {
           )
         ) : (
           <p>
-            <i className="fa-solid fa-file" /> Aucune information trouvée
+            <i className="fa-solid fa-file" /> Aucune information trouvée.
           </p>
         )}
       </div>
